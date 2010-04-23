@@ -509,7 +509,6 @@ Failed:;
 
 	if (socket == NULL && errPtr)
 		*errPtr = [self getSocketError];
-
 	return socket;
 }
 
