@@ -222,8 +222,6 @@ static NSInteger totalMisses;
 				NSString *sval = [[NSString alloc] initWithData:temp.data encoding:NSASCIIStringEncoding];
 				unsigned long long val = [sval longLongValue] - 1;
 				[sval release];
-				if (val < 0)
-					val = 0;
 				temp.data = [NSMutableData dataWithData:[[NSString stringWithFormat:@"%d", val] dataUsingEncoding:NSASCIIStringEncoding]];
 				[dict setObject:temp forKey:key];
 				[self sendOut:sock string:[NSString stringWithFormat:@"%d", val] tag:tag];
